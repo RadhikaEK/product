@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Table 07</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="/static/asset/css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">View details</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-bordered table-dark table-hover">
+						  <thead>
+                            <tr>
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <td><input type="text" name="search"></td>
+                                    <td><input type="submit" value="search"></td>
+                                    <td><a href="/details/sea/"><input type="button" name="next" value="Refresh"></a></td>
+                                </form>
+                            </tr>
+						    <tr>
+						
+						      <th> Name</th>
+						      <th>Meterial type</th>
+						      <th>size</th>
+                              <th>category</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+                            {% for i in x %}
+						    <tr>
+						      <td>{{i.name}}</td>
+						      <td>{{i.material_type}}</td>
+						      <td>{{i.size}}</td>
+                              <td>{{i.category}}</td>
+						    </tr>
+                            {% endfor %}
+						    
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="/static/asset/js/jquery.min.js"></script>
+  <script src="/static/asset/js/popper.js"></script>
+  <script src="/static/asset/js/bootstrap.min.js"></script>
+  <script src="/static/asset/js/main.js"></script>
+
+	</body>
+</html>
+
